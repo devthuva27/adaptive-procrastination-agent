@@ -20,7 +20,7 @@ Procrastination often stems from tasks feeling too big or overwhelming. **Moment
   - **Too Hard 🔨**: If a step still feels overwhelming, the agent breaks *that specific step* into even tinier micro-tasks.
 - **🕒 Context-Aware Reasoning**: Adjusts task sizing (Small/Medium) based on time of day (e.g., smaller tasks for late evenings when energy is lower).
 - **💾 Memory System**: Logs every interaction in a local SQLite database to track progress and identify patterns.
-- **🎨 Premium UI**: A modern, responsive React interface styled with Tailwind CSS v4, featuring smooth animations and a "Rectangle" output layout for maximum clarity.
+- **🎨 Modern UI**: A responsive React interface styled with Tailwind CSS v4, featuring smooth animations and a structured output layout for maximum clarity.
 
 ---
 
@@ -109,16 +109,3 @@ Open your browser to `http://localhost:5173`.
 
 ## 📝 License
 Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-## 🤝 Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-**Developed with ❤️ by Antigravity**
