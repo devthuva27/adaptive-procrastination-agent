@@ -19,7 +19,7 @@ const TaskForm = ({ onSuggestion }) => {
                 body: JSON.stringify({ task_text: task, task_type: type }),
             });
             const data = await response.json();
-            onSuggestion(data);
+            onSuggestion(data, type);
         } catch (error) {
             console.error("Error fetching suggestion:", error);
             onSuggestion({ subtask: "Error connecting to server. Is the backend running?", size: "error" });
