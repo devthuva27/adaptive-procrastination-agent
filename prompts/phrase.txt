@@ -1,0 +1,3 @@
+Reframe this task to be encouraging.
+Size context: {{size}} (if 'small', make it sound very easy and quick. if 'medium', make it sound achievable).
+Task: {{subtask}}

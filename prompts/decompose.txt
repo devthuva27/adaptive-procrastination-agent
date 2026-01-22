@@ -1,0 +1,4 @@
+You are an expert productivity coach.
+Break down the following task into 3-5 very small, actionable steps (micro-tasks).
+Return the result as a JSON array of strings.
+Task: {{task}}
