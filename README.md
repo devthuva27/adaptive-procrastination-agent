@@ -1,56 +1,124 @@
-# Adaptive Procrastination Agent
+# 🚀 Momentum: Adaptive Procrastination Agent
 
-## Problem Statement
-Procrastination often stems from tasks feeling too big or overwhelming. This agent helps individuals overcome procrastination by breaking tasks down into adaptive, bite-sized micro-tasks based on the user's current context (time of day, past behavior) and task type.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Groq Llama 3](https://img.shields.io/badge/AI-Groq_Llama_3-f34f29)](https://groq.com/)
 
-## Agent Contract
-1.  **Observation**: The agent observes the task description, task type, and current time of day.
-2.  **Reasoning**: It determines the appropriate "task size" (small vs. medium) using a decision engine (e.g., smaller tasks for late evenings).
-3.  **Decision**: It decomposes the main task and selects a single, actionable starting point.
-4.  **Learning**: It logs interactions to a database to refine future suggestions (e.g., defaulting to smaller tasks after failures).
+**Break the cycle of avoidance with adaptive, context-aware micro-tasks.**
 
-## Inputs & Outputs
-- **Input**: "Write my history essay" (Type: Study)
-- **Output**: "Just open your document and write the title and one sentence." (Size: Small)
+Procrastination often stems from tasks feeling too big or overwhelming. **Momentum** is an intelligent agent designed to bridge the gap between intention and action by breaking down complex goals into hyper-approachable micro-steps that adapt to your success and energy levels.
 
-## Project Structure
-- `src/`: Python backend (Flask, SQLite, Decision Engine).
-- `frontend/`: React + Tailwind CSS frontend.
-- `data/`: SQLite database storage.
-- `prompts/`: Text prompts for the LLM.
+---
 
-## Setup & Running
+## ✨ Key Features
 
-### Prerequisites
-- Python 3.10+
-- Node.js & npm
+- **🧠 Intelligent Decomposition**: Uses the Groq Llama 3.3 model to break any task into actionable, logical steps.
+- **⚡ Adaptive Feedback Loop**: 
+  - **Done ✓**: Move seamlessly to the next logical step.
+  - **Too Hard 🔨**: If a step still feels overwhelming, the agent breaks *that specific step* into even tinier micro-tasks.
+- **🕒 Context-Aware Reasoning**: Adjusts task sizing (Small/Medium) based on time of day (e.g., smaller tasks for late evenings when energy is lower).
+- **💾 Memory System**: Logs every interaction in a local SQLite database to track progress and identify patterns.
+- **🎨 Premium UI**: A modern, responsive React interface styled with Tailwind CSS v4, featuring smooth animations and a "Rectangle" output layout for maximum clarity.
 
-### Backend
-1. Navigate to the root folder: `adaptive-procrastination-agent`
-2. Install Python dependencies: 
-   ```bash
-   pip install flask flask-cors groq python-dotenv
-   ```
-3. Run the backend:
-   ```bash
-   python src/app.py
-   ```
-   Server runs at `http://localhost:5000`.
+---
 
-### Frontend
-1. Navigate to `frontend`: `cd frontend`
-2. Install dependencies: `npm install`
-3. Run development server:
-   ```bash
-   npm run dev
-   ```
-   The frontend will be available at http://localhost:5173.
+## 🛠️ Technology Stack
 
-### Demo
-Visit `http://localhost:5173` (Vite default).
-Enter a task like "Clean the kitchen" and see the adaptive suggestion.
+- **Backend**: Python 3.10+, Flask (REST API), SQLite3, `python-dotenv`
+- **AI Core**: Groq SDK (Llama 3.3 70B Versatile)
+- **Frontend**: React 19, Vite, Tailwind CSS v4, PostCSS
+- **Styling**: Modern gradients, glassmorphism-inspired components, and responsive grid layouts.
 
-You can also run the terminal demo:
-```bash
-python src/demo_agent.py
+---
+
+## 📂 Project Structure
+
+```text
+adaptive-procrastination-agent/
+├── src/                     # Backend Logic
+│   ├── app.py               # Flask API & Session Flow
+│   ├── groq_client.py       # AI Orchestrator
+│   ├── decision_engine.py   # Context Logic
+│   ├── db.py                # SQL Storage
+│   └── demo_agent.py        # Terminal Demo
+├── frontend/                # React Web App
+│   ├── src/                 # Components & Styles
+│   ├── vite.config.js       
+│   └── package.json         
+├── prompts/                 # Prompt Engineering Templates
+│   ├── decompose.txt        # Task break-down logic
+│   └── phrase.txt           # Persona & Tone logic
+├── data/                    # Local Storage (SQLite DB)
+├── README.md                # Documentation
+└── requirements.txt         # Python Dependencies
 ```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- **Python 3.10+**
+- **Node.js 18+**
+- **Groq API Key** (Get yours at [console.groq.com](https://console.groq.com/keys))
+
+### 2. Backend Setup
+```bash
+# Clone the repository
+git clone https://github.com/your-username/momentum-agent.git
+cd momentum-agent
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure Environment
+# Create a .env file in the root directory
+# Add: GROQ_API_KEY=your_key_here
+```
+
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### 4. Run the Application
+In one terminal, start the Python server:
+```bash
+python src/app.py
+```
+In another terminal, start the Vite dev server:
+```bash
+cd frontend && npm run dev
+```
+Open your browser to `http://localhost:5173`.
+
+---
+
+## 🤖 Agent Contract
+
+- **Observation**: The agent observes the user's task input, category, and current time context.
+- **Reasoning**: It determines if the user is in a "high energy" (Day) or "low energy" (Evening) window and adjusts task complexity accordingly.
+- **Decision**: Orchestrates multiple LLM calls to decompose tasks and rephrase them into encouraging, actionable language.
+- **Learning**: Records success/struggle feedback via the "Done" and "Too Hard" buttons to maintain user momentum.
+
+---
+
+## 📝 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 🤝 Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+**Developed with ❤️ by Antigravity**
